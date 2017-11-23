@@ -8,14 +8,30 @@
         <servlet-class>edu.etu.web.Lab1Servlet </servlet-class>
         <init-param>
             <param-name>default_tab</param-name>
-            <param-value>1</param-value>
+            <param-value>2</param-value>
         </init-param>
+
     </servlet>
 
     <servlet-mapping>
         <servlet-name>Lab1Servlet</servlet-name>
+        <url-pattern>/Lab1Servlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>catalog</servlet-name>
+        <servlet-class>edu.etu.web.catalog</servlet-class>
+        <init-param>
+            <param-name>filter</param-name>
+            <param-value>0</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>catalog</servlet-name>
         <url-pattern></url-pattern>
     </servlet-mapping>
+
 </web-app>
 
 

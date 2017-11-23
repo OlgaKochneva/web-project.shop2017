@@ -13,6 +13,22 @@ public class Lab1Servlet extends HttpServlet {
                          HttpServletResponse response) throws ServletException,
             IOException {
         String lang = request.getParameter("lang");
+        HttpSession ss = request.getSession();
+        Cookie[] cookies = request.getCookies();
+
+        if(lang == null) {
+            if (cookies != null) {
+                for (Cookie c : cookies) {
+                    if ("lang".equals(c.getName()))
+                        lang = c.getValue();
+                }
+            }else{
+                lang = getInitParameter("lang");
+            }
+        }
+        ss.setAttribute("locale", lang);
+        response.addCookie(new Cookie("lang",lang));
+
         Locale locale;
         if ("en".equals(lang)) {
             locale = new Locale("en", "en");
@@ -24,98 +40,51 @@ public class Lab1Servlet extends HttpServlet {
             locale = Locale.getDefault();
         }
 
-        int  value = Integer.parseInt(getInitParameter("default_tab"));
+        int value = -1;
+        if(cookies != null) {
+            for (Cookie c : cookies) {
+                if ("default_tab".equals(c.getName()))
+                    value = Integer.parseInt(c.getValue());
+            }
+        }
+
+        if(value == -1)
+            value = Integer.parseInt(getInitParameter("default_tab"));
+
         ResourceBundle resources = ResourceBundle.getBundle("lg", locale);
+        String id = request.getParameter("id");
+        int _id;
+        try {
+            _id = Integer.parseInt(id);
+        } catch (Exception ex){
+            _id = 0;
+        }
+
+        if(id == null || _id < 1 || _id > 3) {
+            if (cookies != null) {
+                for (Cookie c : cookies) {
+                    if ("id".equals(c.getName()))
+                        id = c.getValue();
+                }
+            }else{
+                id = "1";
+            }
+        }
+        response.addCookie(new Cookie("id", id));
 
         StringBuilder sb = new StringBuilder();
 
-
         sb.append("<html lang=\"en\">\n" +
                 "<head>\n" +
+                "<link href=\"./button_style.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\">\n"+
                 "    <meta charset=\"UTF-8\">\n" +
                 "    <title>Boards only</title>\n" +
                 "</head>\n" +
-                "\n" +
-                "<!--Стили кнопок-->\n" +
-                "<style>\n" +
-                "div.knopka button {\n" +
-                "        border-radius: 15px;\n" +
-                "        float: left;\n" +
-                "        border: none;\n" +
-                "        outline: none;\n" +
-                "        cursor: pointer;\n" +
-                "        transition: 0.4s;\n" +
-                "        font-size: 22px;\n" +
-                "        font-family: 'Times New Roman';\n" +
-                "        color: #fffbf7;\n" +
-                "        background: rgba(212, 75, 56, 0);\n" +
-                "        padding: .7em 0.59em;\n" +
-                "    }\n" +
-                "\n" +
-                "    div.knopka button:hover {\n" +
-                "        background-color: rgba(0, 0, 0, 0.2);\n" +
-                "    }\n" +
-                "\n" +
-                "\n" +
-                "    div.knopka button.active {\n" +
-                "        background-color: rgba(255, 255, 255, 0.2);\n" +
-                "    }\n" +
-                "\n" +
-                "div.knopka3 {\n" +
-                "        position: relative;\n" +
-                "        left: 12%;\n" +
-                "        font-family: 'Times New Roman';\n" +
-                "        font-size: 24px;\n" +
-                "        color: #fffbf7; /* цвет текста */\n" +
-                "    }\n" +
-                "    div.knopka3 button {\n" +
-                "       width:43%;\n" +
-                "        font-size: 22px;\n" +
-                "        position: relative;\n" +
-                "        left: 5%;\n" +
-                "        border-radius: 15px;\n" +
-                "        border: none;\n" +
-                "        outline: none;\n" +
-                "        cursor: pointer;\n" +
-                "        transition: 0.4s;\n" +
-                "        font-family: 'Times New Roman';\n" +
-                "        font-size: 22px;\n" +
-                "        color: #fffbf7; /* цвет текста */\n" +
-                "        background: rgba(0, 0, 0, 0.2); /* фон кнопки */\n" +
-                "        padding: .7em 2.0em; /* отступ от текста */\n" +
-                "    }\n" +
-                "    div.knopka3 button:hover {\n" +
-                "        background-color: rgba(255, 255, 255, 0.2);\n" +
-                "    }\n" +
-                "\n" +
-                "    /* при наведении курсора мышки */\n" +
-                "    div.knopka3 button:active {\n" +
-                "        background-color: rgba(0, 0, 0, 0.2);\n" +
-                "    }\n" +
+                "        <h1 style=\"margin: 0;padding:0;font-size:60pt; font-family: 'Brush Script MT' ; text-align: center; color:#fffbf7;\">\n" +
+                "              <a style=\"text-decoration: none; background: rgba(212, 75, 56, 0); color: #fffbf7;\n"+
+                "\" href=\"/\">Boards only</a>\n" +
+                "        </h1>\n" +
 
-                "    a.buttn_lng {\n" +
-                "        position: relative;\n" +
-                "        left: 36%;\n" +
-                "        border-color: black;\n" +
-                "        border-radius: 35px;\n" +
-                "        font-size: 15px;\n" +
-                "        color: #fffbf7; /* цвет текста */\n" +
-                "        text-decoration: none; /* убирать подчёркивание у ссылок */\n" +
-                "        user-select: none; /* убирать выделение текста */\n" +
-                "        background: rgba(212, 75, 56, 0); /* фон кнопки */\n" +
-                "        padding: .7em 0.59em; /* отступ от текста */\n" +
-                "    }\n" +
-                "\n" +
-                "    a.buttn_lng:hover {\n" +
-                "        background: rgba(255, 255, 255, 0.2);\n" +
-                "    }\n" +
-                "\n" +
-                "    /* при наведении курсора мышки */\n" +
-                "    a.buttn_lng:active {\n" +
-                "        background: rgba(0, 0, 0, 0.2);\n" +
-                "    }\n" +
-                "\n" +
-                "</style>\n" +
                 "<!--Стиль списка-->\n" +
                 "<style>\n" +
                 "    .li1 {\n" +
@@ -130,8 +99,9 @@ public class Lab1Servlet extends HttpServlet {
                 "    li:before {\n" +
                 "        content: \"o \";\n" +
                 "    }\n" +
-                "</style>\n" +
-                "<!--Функционал кнопок-->\n" +
+                "</style>\n");
+
+        sb.append("<!--Функционал кнопок-->\n" +
                 "<script>\n" +
                 "    function openTab(evt, tabName) {\n" +
                 "        var i, tabs, tab;\n" +
@@ -169,23 +139,21 @@ public class Lab1Servlet extends HttpServlet {
                 "                tab[i].className += \" active\";\n" +
                 "            }\n" +
                 "        }\n" +
-                "\n" +
                 "    }\n" +
-                "</script>\n" +
-                "<body onload =\"openfirstTab('" + value + "')\" style=\"background-image: url(bod.png)\">\n" +
+                "</script>\n");
+        sb.append("<body onload =\"openfirstTab('" + value + "')\" style=\"background-image: url(bod.png); background-repeat:no-repeat;\n" +
+                "background-attachment:fixed;\">\n" +
                 "<!--Заголовок-->\n" +
-                "<h1 style=\"margin: 0;padding:0;font-size:60pt; font-family: 'Brush Script MT' ; text-align: center; color:#fffbf7;\">\n" +
-                "    Boards-only\n" +
-                "</h1>\n" +
+
                 "<!--Расположение таблицы-->\n" +
                 "<div style=\"margin-top: 0; margin-left: 2% \">\n" +
                 "\n" +
                 "    <table border=\"0\">\n" +
                 "        <tr>\n" +
-                "\n" +
-                "<td height=\"50\">\n" +
+                "\n" );
+        sb.append("<td height=\"50\">\n" +
                 "<div class=\"knopka3\">\n" +
-                "<i>" + resources.getString("price") + "</i>\n" +
+                "<i>"+resources.getString("pr2")+ resources.getString("price"+id) + resources.getString("pr")+ "</i>\n" +
                 "<button class=\"buttn_buy\" <i>" + resources.getString("btn_buy") + "</i></button>\n" +
                 "\n" +
                 "</div>\n" +
@@ -196,34 +164,37 @@ public class Lab1Servlet extends HttpServlet {
                 "<button class=\"tab\" onclick=openTab(event,'2')><i>" + resources.getString("button2") + "</i></button>\n" +
                 "<button class=\"tab\" onclick=openTab(event,'3')><i>" + resources.getString("button3") + "</i></button>" +
                 "</div>\n" +
-                "\n" +
-                "<div>\n" +
-                "<a href=\"?lang = ru\" class=\"buttn_lng\"><i>Ru</i></a>\n" +
-                "<a href=\"?lang=en\" class=\"buttn_lng\"><i>En</i></a>\n" +
-                "<a href=\"?lang=gr\" class=\"buttn_lng\"><i>Ge</i></a>\n" +
+                "<div style=\"float:right\";>"+
+                "<a href=\"?lang=ru\" class=\"buttn_lng\"><i>Ru</i></a>\n" +
+                "    <a href=\"?lang=en\" class=\"buttn_lng\"><i>En</i></a>\n" +
+                "    <a href=\"?lang=gr\" class=\"buttn_lng\"><i>Ge</i></a>\n" +
                 "</div>\n" +
+
+                "\n" +
                 "</td>\n" +
                 "        </tr>\n" +
                 "        <tr>\n" +
                 "            <td>\n" +
-                "                <img height=440px width=430px src=\"imh.png\">\n" +
+                "                <img height=440px width=430px src='./pics/img"+id+".png'>\n" +
                 "            </td>\n" +
                 "\n" +
                 "            <td style=\"font-size:20px; background-color:rgba(255,255,255, 0.4); width: 100%;\n" +
                 "                        border-radius:25px;vertical-align: top;\">\n" +
                 "                <div class=\"tabs\" id=\"1\">\n" +
-                resources.getString("short") +
-                "\n" +
+                "<p style=\"font-size:31px;margin-left: 10px\"><i>"+resources.getString("titlesh")+ resources.getString("name"+id)+"<br></i></p>\n"+
+                "       <p style=\"font-size:20px; color:rgba(0,0,0,1);margin-left: 10px\"> <i>\n" +
+                resources.getString("short"+id) +
+                "</i></p>\n" +
                 "                </div>\n" +
                 "                <div class=\"tabs\" id=\"2\">\n" +
-                "\n" +
-                resources.getString("list") +
-
+                "<p style=\"font-size:31px;margin-left: 10px\"><i>\n" + resources.getString("titlel")+ resources.getString("name"+id) +"<br></i></p>\n"+
+                resources.getString("list"+id) +
 
                 "\n" +
                 "                </div>\n" +
                 "                <div class=\"tabs\" id=\"3\" style=\"font-size: 20px; font-style: italic\">\n" +
-                resources.getString("review") +
+                " <p style=\"font-size:31px;margin-left: 10px\"><i>"+ resources.getString("titlere")+ resources.getString("name"+id) +"<br></i></p>\n"+
+                resources.getString("review1") +
                 "            </td>\n" +
                 "\n" +
                 "        </tr>\n" +
