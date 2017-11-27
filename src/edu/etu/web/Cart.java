@@ -30,6 +30,8 @@ public class Cart extends HttpServlet {
                 }
          if ("lang".equals(c.getName()) && lang == null )
                     lang = c.getValue();
+                if ("user".equals(c.getName()))
+                    ss.setAttribute("username", c.getValue());
             }
         }catch (Exception ex){};
 

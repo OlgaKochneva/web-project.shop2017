@@ -5,9 +5,10 @@
 <html>
 <head>
     <link href="./button_style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./auth_form.css" rel="stylesheet" type="text/css" media="all">
     <link rel="shortcut icon" href="/pics/empt.png" type="image/png">
     <script src="./js/filter.js"></script>
-   <%--// <script src="./js/login_worker.js"></script>--%>
+    <script src="./js/login_worker.js"></script>
     <script src="./js/Cart_worker.js"></script>
     <title>BoardsOnly</title>
 

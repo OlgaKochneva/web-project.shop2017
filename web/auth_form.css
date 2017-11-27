@@ -1,0 +1,94 @@
+#boxForm
+{
+    border-radius: 25%;
+    border-color: black;
+    margin: 0 auto;
+    background: rgba(222, 227, 227, 0.5); /* ??? ?????? */
+    width:340px;
+    height: 290px;
+}
+
+#boxForm #title
+{
+
+    font-size: 35px;
+    font-style: italic;
+    color: #fffbf7; /* ???? ?????? */
+    text-align:center;
+    padding-top:30px;
+}
+
+#boxForm form
+{
+    margin-top:15px;
+    text-align:center;
+}
+
+.text {
+    font-size: 15px;
+    font-style: italic;
+    padding: 10px;
+    width: 200px;
+    margin-top: 10px;
+    border:none;
+    color: rgb(186, 128, 244);
+    background-color: rgba(249, 245, 238, 0.9 );
+}
+.text:focus
+{
+    background-color: rgba(141, 95, 189, 0.5);
+    color: rgba(246, 228, 243, 0.9);
+    border: none;
+    outline: none;
+}
+
+.OK  {
+    margin-top: 10px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'Times New Roman';
+    color: rgba(255, 254, 250, 1);
+    background-color: rgba(215, 184, 249, 0.7);
+    padding: .5em 2.59em;
+    text-decoration: none;
+    user-select: none;
+}
+
+.OK:hover {
+    background-color: rgba(141, 95, 189, 0.5);
+}
+
+.OK:active {
+    background-color: rgba(141, 95, 189, 0.5);
+}
+
+div.cabinet{
+    margin-top: 30px;
+    font-size: 22px;
+    margin-left:30px;
+    font-family: 'Times New Roman';
+    font-style: italic;
+    color: #fffbf7;
+    border-radius: 5%;
+    border-color: black;
+    background: rgba(222, 227, 227, 0.3); /* ??? ?????? */
+    width:95%;
+    height: 50%;
+
+}
+
+form#cabinet_form{
+    color: rgb(28, 27, 27);
+    margin-right:30px ;
+    margin-top: 5%;
+    font-family: 'Times New Roman';
+    font-style: italic;
+    outline: 1px rgb(186, 128, 244) solid;
+    padding: 10px;
+    width: 340px;
+    float: right;
+
+}

@@ -16,7 +16,6 @@ div.knopka button:hover {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-
 div.knopka button.active {
     background-color: rgba(255, 255, 255, 0.2);
 }
@@ -28,6 +27,7 @@ div.knopka3 {
     font-size: 24px;
     color: #fffbf7; /* ???? ?????? */
 }
+
 div.knopka3 button {
     font-family: 'Times New Roman';
     font-style: italic;
@@ -54,9 +54,7 @@ div.knopka3 button:active {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-div.header{
 
-}
 div.header button {
     border-radius: 15px;
     float: left;
@@ -75,35 +73,36 @@ div.header button:hover {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-
 div.header button.active {
     background-color: rgba(255, 255, 255, 0.2);
 }
-    a.buttn_lng {
 
-        border-color: black;
-        border-radius: 35px;
-        font-size: 15px;
-        color: #fffbf7; /* ???? ?????? */
-        text-decoration: none; /* ??????? ????????????? ? ?????? */
-        user-select: none; /* ??????? ????????? ?????? */
-        background: rgba(212, 75, 56, 0); /* ??? ?????? */
-        padding: .7em 0.59em; /* ?????? ?? ?????? */
-    }
-    a.buttn_lng:hover {
-        background: rgba(255, 255, 255, 0.2);
-    }
+a.buttn_lng {
 
-    a.buttn_lng:active {
-        background: rgba(0, 0, 0, 0.2);
-    }
+    border-color: black;
+    border-radius: 35px;
+    font-size: 15px;
+    color: #fffbf7; /* ???? ?????? */
+    text-decoration: none; /* ??????? ????????????? ? ?????? */
+    user-select: none; /* ??????? ????????? ?????? */
+    background: rgba(212, 75, 56, 0); /* ??? ?????? */
+    padding: .7em 0.59em; /* ?????? ?? ?????? */
+}
+
+a.buttn_lng:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+a.buttn_lng:active {
+    background: rgba(0, 0, 0, 0.2);
+}
 
 div.box {
     margin-left: 21px;
     margin-bottom: 21px;
     width: 450px;
     height: 330px;
-    float:left;
+    float: left;
     outline: black;
     font-size: 17px;
     font-style: italic;
@@ -123,14 +122,14 @@ a.myLin {
 
 }
 
-span.info a{
+span.info a {
     text-decoration: none;
     text-transform: uppercase;
     color: black;
     font-weight: bolder;
 }
 
-div.user_info{
+div.user_info {
     margin-left: 25px;
 }
 
@@ -145,6 +144,7 @@ a.btn_user {
     background: rgba(212, 75, 56, 0); /* ??? ?????? */
     padding: .1em 0.59em; /* ?????? ?? ?????? */
 }
+
 a.btn_user:hover {
     background: rgba(255, 255, 255, 0.2);
 }
@@ -153,7 +153,7 @@ a.btn_user:active {
     background: rgba(0, 0, 0, 0.2);
 }
 
-thead.main{
+thead.main {
     text-align: center;
     font-size: 20px;
     font-weight: 300;
@@ -161,9 +161,28 @@ thead.main{
     font-style: italic;
 }
 
-table.tab{
+table.tab {
+    border: 2px solid rgba(255, 105, 100, 0);
     font-size: 20px;
     color: black; /* ???? ?????? */
     font-style: italic;
     background: rgba(255, 255, 255, 0.3);
+}
+
+.li1 {
+    list-style-type: none;
+    margin-left: 10px;
+    margin-top: 20px;
+    font-style: italic;
+
+}
+
+li:before {
+    content: "o ";
+}
+
+div.user{
+    text-align: center;
+    margin-left:30px;
+    margin-top: 20px;
 }

@@ -22,7 +22,8 @@ public class Lab1Servlet extends HttpServlet {
                 for (Cookie c : cookies) {
                     if ("lang".equals(c.getName()))
                         lang = c.getValue();
-
+                    if ("user".equals(c.getName()))
+                        ss.setAttribute("username", c.getValue());
                 }
             }else{
                 lang = getInitParameter("lang");
@@ -53,7 +54,6 @@ public class Lab1Servlet extends HttpServlet {
         if(value == -1)
             value = Integer.parseInt(getInitParameter("default_tab"));
 
-
         ResourceBundle resources = ResourceBundle.getBundle("lg", locale);
         String id = request.getParameter("id");
         int _id;
@@ -75,8 +75,10 @@ public class Lab1Servlet extends HttpServlet {
         }
         response.addCookie(new Cookie("id", id));
 
-
-        String description;
+        String userinfo = "<a class=btn_user href='./cabinet' onclick='closeform()'>" + resources.getString("btn_enter") + "</a>";
+        String user = (String)ss.getAttribute("username");
+        if(user != null && user != "")
+            userinfo = "<a class=myLin href='./cabinet' >" + resources.getString("logged_in") + " <b>" + user + "</b></a>";
         StringBuilder sb = new StringBuilder();
 
         sb.append("<html lang=\"en\">\n" +
@@ -85,77 +87,16 @@ public class Lab1Servlet extends HttpServlet {
                 "    <meta charset=\"UTF-8\">\n" +
                 "    <title>Boards only</title>\n" +
                 "<link rel=\"shortcut icon\" href=\"/pics/empt.png\" type=\"image/png\">\n"+
+                "<link href=\"./auth_form.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\">\n"+
                 "<script src=\"./js/Cart_worker.js\"></script>\n"+
-                "</head>\n" +
-                "<!--Стиль списка-->\n" +
-                "<style>\n" +
-                "    .li1 {\n" +
-                "        list-style-type: none;\n" +
-                "\n" +
-                "        margin-left: 10px;\n" +
-                "        margin-top: 20px;\n" +
-                "        font-style: italic;\n" +
-                "\n" +
-                "    }\n" +
-                "\n" +
-                "    li:before {\n" +
-                "        content: \"o \";\n" +
-                "    }\n" +
-                "</style>\n");
-
-        sb.append("<!--Функционал кнопок-->\n" +
-                "<script>\n" +
-                "    function openTab(evt, tabName) {\n" +
-                "        var i, tabs, tab;\n" +
-                "\n" +
-                "        tabs = document.getElementsByClassName(\"tabs\");\n" +
-                "        for (i = 0; i < tabs.length; i++) {\n" +
-                "            tabs[i].style.display = \"none\";\n" +
-                "        }\n" +
-                "\n" +
-                "        tab = document.getElementsByClassName(\"tab\");\n" +
-                "        for (i = 0; i < tab.length; i++) {\n" +
-                "            tab[i].className = tab[i].className.replace(\" active\", \"\");\n" +
-                "        }\n" +
-                "\n" +
-                "        document.getElementById(tabName).style.display = \"block\";\n" +
-                "        evt.currentTarget.className += \" active\";\n" +
-                "\n" +
-                "    }\n" +
-                "</script>\n" +
-                "<script>\n" +
-                "    function openfirstTab(tabName) {\n" +
-                "        var i, tabs, tab;\n" +
-                "\n" +
-                "        tabs = document.getElementsByClassName(\"tabs\");\n" +
-                "        for (i = 0; i < tabs.length; i++) {\n" +
-                "            tabs[i].style.display = \"none\";\n" +
-                "        }\n" +
-                "\n" +
-                "        tab = document.getElementsByClassName(\"tab\");\n" +
-                "        for (i = 0; i < tab.length; i++) {\n" +
-                "            tab[i].className = tab[i].className.replace(\" active\", \"\");\n" +
-                "          if(tabName == tabs[i].getAttribute(\"id\"))\n" +
-                "            {\n" +
-                "                tabs[i].style.display =\"block\";\n" +
-                "                tab[i].className += \" active\";\n" +
-                "            }\n" +
-                "        }\n" +
-                "    }\n" +
-                "</script>\n");
+                "<script src=\"./js/login_form.js\"></script>\n"+
+                "<script src=\"./js/Tab_clicked.js\"></script>\n"+
+                "</head>");
         sb.append("<body onload =\"openfirstTab('" + value + "')\" style=\"background-image: url(./pics/bod.png); background-repeat:no-repeat;\n" +
-                "background-attachment:fixed;\">\n" +
-                "<!--Заголовок-->\n" +
-
-                "<!--Расположение таблицы-->\n" +
-                "<div style=\"margin-top: 0; margin-left: 2% \">\n" +
-                "\n" +
-                "    <table border=\"0\">\n" +
-                "        <tr>\n" +
-                "\n" );
+                "background-attachment:fixed;\">");
+        sb.append("	</div>");
         sb.append("<div class='header'>\n" +
-                "<div>\n" +
-                "    <a class=\"btn_user\">"+resources.getString("btn_enter")+"</a>\n" +
+                "<div>\n" + userinfo +
                 "    <a class=\"btn_user\" href=\"/cart\">"+resources.getString("btn_cart")+"</a>\n" +
                 "    <a class=\"btn_user\" >"+resources.getString("btn_history")+"</a>\n" +
                 "</div>\n"+
@@ -170,6 +111,12 @@ public class Lab1Servlet extends HttpServlet {
                 "        </div>\n" +
                 "\n" +
                 "</div>\n"+
+                "\n" +
+                "<!--Расположение таблицы-->\n" +
+                "<div style=\"margin-top: 0; margin-left: 2% \">\n" +
+                "\n" +
+                "    <table border=\"0\">\n" +
+                "        <tr>\n" +
                 "\n" +
                 "<td height=\"50\">\n" +
                 "<div class=\"knopka3\">\n" +
