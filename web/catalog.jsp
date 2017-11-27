@@ -5,25 +5,24 @@
 <html>
 <head>
     <link href="./button_style.css" rel="stylesheet" type="text/css" media="all">
-    <script src="./js/filtration.js"></script>
+    <link rel="shortcut icon" href="/pics/empt.png" type="image/png">
+    <script src="./js/filter.js"></script>
+   <%--// <script src="./js/login_worker.js"></script>--%>
+    <script src="./js/Cart_worker.js"></script>
     <title>BoardsOnly</title>
 
     <jsp:useBean id="BoardBean" class="myBean.BoardBean" scope="session"/>
 </head>
 <body onload="sort()" ;
-      style="background-image: url(bod.png); background-repeat:no-repeat; background-attachment:fixed;">
-<div>
-
-        <h1 style="margin: 0;padding:0;font-size:60pt; font-family: 'Brush Script MT' ; text-align: center; color:#fffbf7;">
-            Boards only
-        </h1>
+      style="background-image: url(./pics/bod.png); background-repeat:no-repeat; background-attachment:fixed;">
+<div >
 
     <jsp:include page="header.jsp"/>
 </div>
 
-<div style=" border-top:1px solid #fffbf7;margin-top: 50px; margin-left: 7px " ; id='container'>
-    <span  style="position:relative; right: 19%;" id="sort"><a class="myLin" onclick="sort(0)" id="a0">Show all</a> | <a class="myLin" onclick="sort(1)" id="a1">22</a>
-     | <a class="myLin" onclick="sort(2)" id="a2">27</a> | <a class="myLin"   onclick="sort(3)" id="a3">Longboard</a></span>
+<div style=" border-top:1px solid #fffbf7;margin-top: 25px; margin-left: 7px " ; id='container'>
+    <span id="sort"><a class="myLin" onclick="sort(0)">Show all</a> | <a class="myLin" onclick="sort(1)">22</a> | <a class="myLin"onclick="sort(2)">27</a>
+        | <a class="myLin" onclick="sort(3)" >Longboard</a></span>
 
     <%
         String img;
@@ -39,6 +38,6 @@
         }
     %>
 </div>
-</div>
+
 </body>
 </html>

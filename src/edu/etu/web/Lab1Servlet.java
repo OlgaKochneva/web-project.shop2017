@@ -6,13 +6,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.util.Locale;
 import java.util.ResourceBundle;
-
+import java.util.Map;
 
 public class Lab1Servlet extends HttpServlet {
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException,
             IOException {
-        String lang = request.getParameter("lang");
+
+         String lang = request.getParameter("lang");
         HttpSession ss = request.getSession();
         Cookie[] cookies = request.getCookies();
 
@@ -21,6 +22,7 @@ public class Lab1Servlet extends HttpServlet {
                 for (Cookie c : cookies) {
                     if ("lang".equals(c.getName()))
                         lang = c.getValue();
+
                 }
             }else{
                 lang = getInitParameter("lang");
@@ -51,6 +53,7 @@ public class Lab1Servlet extends HttpServlet {
         if(value == -1)
             value = Integer.parseInt(getInitParameter("default_tab"));
 
+
         ResourceBundle resources = ResourceBundle.getBundle("lg", locale);
         String id = request.getParameter("id");
         int _id;
@@ -72,6 +75,8 @@ public class Lab1Servlet extends HttpServlet {
         }
         response.addCookie(new Cookie("id", id));
 
+
+        String description;
         StringBuilder sb = new StringBuilder();
 
         sb.append("<html lang=\"en\">\n" +
@@ -79,12 +84,9 @@ public class Lab1Servlet extends HttpServlet {
                 "<link href=\"./button_style.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\">\n"+
                 "    <meta charset=\"UTF-8\">\n" +
                 "    <title>Boards only</title>\n" +
+                "<link rel=\"shortcut icon\" href=\"/pics/empt.png\" type=\"image/png\">\n"+
+                "<script src=\"./js/Cart_worker.js\"></script>\n"+
                 "</head>\n" +
-                "        <h1 style=\"margin: 0;padding:0;font-size:60pt; font-family: 'Brush Script MT' ; text-align: center; color:#fffbf7;\">\n" +
-                "              <a style=\"text-decoration: none; background: rgba(212, 75, 56, 0); color: #fffbf7;\n"+
-                "\" href=\"/\">Boards only</a>\n" +
-                "        </h1>\n" +
-
                 "<!--Стиль списка-->\n" +
                 "<style>\n" +
                 "    .li1 {\n" +
@@ -141,7 +143,7 @@ public class Lab1Servlet extends HttpServlet {
                 "        }\n" +
                 "    }\n" +
                 "</script>\n");
-        sb.append("<body onload =\"openfirstTab('" + value + "')\" style=\"background-image: url(bod.png); background-repeat:no-repeat;\n" +
+        sb.append("<body onload =\"openfirstTab('" + value + "')\" style=\"background-image: url(./pics/bod.png); background-repeat:no-repeat;\n" +
                 "background-attachment:fixed;\">\n" +
                 "<!--Заголовок-->\n" +
 
@@ -151,10 +153,28 @@ public class Lab1Servlet extends HttpServlet {
                 "    <table border=\"0\">\n" +
                 "        <tr>\n" +
                 "\n" );
-        sb.append("<td height=\"50\">\n" +
+        sb.append("<div class='header'>\n" +
+                "<div>\n" +
+                "    <a class=\"btn_user\">"+resources.getString("btn_enter")+"</a>\n" +
+                "    <a class=\"btn_user\" href=\"/cart\">"+resources.getString("btn_cart")+"</a>\n" +
+                "    <a class=\"btn_user\" >"+resources.getString("btn_history")+"</a>\n" +
+                "</div>\n"+
+                "        <h1 style=\" border-top:1px solid #fffbf7; margin: 0;padding:0;font-size:60pt; font-family: 'Brush Script MT' ; text-align: center; color:#fffbf7;\">\n" +
+                "              <a style=\"text-decoration: none; background: rgba(212, 75, 56, 0); color: #fffbf7;\n"+
+                "\" href=\"/\">Boards only</a>\n" +
+                "        </h1>\n" +
+                "        <div style=\"float:right\">\n" +
+                "            <a href=\"?lang=ru\" class=\"buttn_lng\"><i>Ru</i></a>\n" +
+                "            <a href=\"?lang=en\" class=\"buttn_lng\"><i>En</i></a>\n" +
+                "            <a href=\"?lang=gr\" class=\"buttn_lng\"><i>Ge</i></a>\n" +
+                "        </div>\n" +
+                "\n" +
+                "</div>\n"+
+                "\n" +
+                "<td height=\"50\">\n" +
                 "<div class=\"knopka3\">\n" +
                 "<i>"+resources.getString("pr2")+ resources.getString("price"+id) + resources.getString("pr")+ "</i>\n" +
-                "<button class=\"buttn_buy\" <i>" + resources.getString("btn_buy") + "</i></button>\n" +
+                "<button class=\"buttn_buy\" onclick=\"to_cart("+id+")\"<i>" + resources.getString("btn_buy") + "</i></button>\n" +
                 "\n" +
                 "</div>\n" +
                 "</td>\n" +
@@ -164,14 +184,7 @@ public class Lab1Servlet extends HttpServlet {
                 "<button class=\"tab\" onclick=openTab(event,'2')><i>" + resources.getString("button2") + "</i></button>\n" +
                 "<button class=\"tab\" onclick=openTab(event,'3')><i>" + resources.getString("button3") + "</i></button>" +
                 "</div>\n" +
-                "<div style=\"float:right\";>"+
-                "<a href=\"?lang=ru\" class=\"buttn_lng\"><i>Ru</i></a>\n" +
-                "    <a href=\"?lang=en\" class=\"buttn_lng\"><i>En</i></a>\n" +
-                "    <a href=\"?lang=gr\" class=\"buttn_lng\"><i>Ge</i></a>\n" +
-                "</div>\n" +
-
-                "\n" +
-                "</td>\n" +
+               "</td>\n" +
                 "        </tr>\n" +
                 "        <tr>\n" +
                 "            <td>\n" +

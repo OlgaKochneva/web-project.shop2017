@@ -13,9 +13,7 @@ public class BoardBean implements Serializable{
     public int getId(){
         return id;
     }
-    public String gettype(){
-        return type;
-    }
+    public String gettype(){return type;}
     public double getPrice(){
         return price;
     }
@@ -36,9 +34,7 @@ public class BoardBean implements Serializable{
         this.id = x;
     }
 
-    public void setType(String x){
-        this.type = x;
-    }
+    public void setType(String x){this.type = x;}
 
     public void setPrice(double x) {
         this.price = x;

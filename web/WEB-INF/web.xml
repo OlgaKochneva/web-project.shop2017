@@ -3,14 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
     <servlet>
         <servlet-name>Lab1Servlet</servlet-name>
         <servlet-class>edu.etu.web.Lab1Servlet </servlet-class>
         <init-param>
             <param-name>default_tab</param-name>
-            <param-value>2</param-value>
+            <param-value>1</param-value>
         </init-param>
-
+        <init-param>
+            <param-name>lang</param-name>
+            <param-value>ru</param-value>
+        </init-param>
     </servlet>
 
     <servlet-mapping>
@@ -25,11 +29,24 @@
             <param-name>filter</param-name>
             <param-value>0</param-value>
         </init-param>
+        <init-param>
+            <param-name>lang</param-name>
+            <param-value>ru</param-value>
+        </init-param>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>catalog</servlet-name>
         <url-pattern></url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Cart</servlet-name>
+        <servlet-class>edu.etu.web.Cart</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Cart</servlet-name>
+        <url-pattern>/cart</url-pattern>
     </servlet-mapping>
 
 </web-app>

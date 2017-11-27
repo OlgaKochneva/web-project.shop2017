@@ -1,5 +1,5 @@
 package edu.etu.web;
-//??????? ???????
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -24,17 +24,12 @@ public class catalog extends HttpServlet {
                 if ("filter".equals(c.getName())) {
                     filter_param = c.getValue();
                 }
-
-                if ("user".equals(c.getName()))
-                    ss.setAttribute("username", c.getValue());
             }
         }
         response.addCookie(new Cookie("filter", filter_param));
 
         if(lang == null)
-            lang = "ru";
-
-
+            lang = "en";
         response.addCookie(new Cookie("lang", lang));
         ss.setAttribute("locale", lang);
 

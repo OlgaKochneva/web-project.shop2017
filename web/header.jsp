@@ -9,7 +9,7 @@
     Locale locale;
     if ("en".equals(lang)) {
         locale = new Locale("en", "en");
-    } else if ("kz".equals(lang)) {
+    } else if ("gr".equals(lang)) {
         locale = new Locale("gr", "gr");
     } else if ("ru".equals(lang)) {
         locale = new Locale("ru", "ru");
@@ -20,18 +20,19 @@
 %>
 
 <div class='header'>
-    <div>
-
-        <div style="float:left">
-            <button class="toptab"><i>История</i></button>
-            <button class="toptab"><i>Корзина</i></button>
-            <button class="toptab"><i>Вход</i></button>
+    <a class="btn_user"><%= res.getString("btn_enter")%></a>
+    <a class="btn_user" href="/cart"><%= res.getString("btn_cart")%>    </a>
+    <a class="btn_user" ><%= res.getString("btn_history")%></a>
+    <div style="float:right">
+        <a href="?lang=ru" class="buttn_lng"><i>Ru</i></a>
+        <a href="?lang=en" class="buttn_lng"><i>En</i></a>
+        <a href="?lang=gr" class="buttn_lng"><i>Ge</i></a>
     </div>
-        <div style="float:right">
-            <a href="?lang=ru" class="buttn_lng"><i>Ru</i></a>
-            <a href="?lang=en" class="buttn_lng"><i>En</i></a>
-            <a href="?lang=gr" class="buttn_lng"><i>Ge</i></a>
-        </div>
+
+    <h1 style=" border-top:1px solid #fffbf7; margin: 0;padding:0;font-size:60pt; font-family: 'Brush Script MT' ; text-align: center; color:#fffbf7;">
+        <a style="text-decoration: none; background: rgba(212, 75, 56, 0); color: #fffbf7;" href="/">Boards only</a>
+    </h1>
+
 
 
 </div>
