@@ -2,6 +2,7 @@ package edu.etu.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -17,7 +18,6 @@ public class Exit extends HttpServlet {
             response.addCookie(cookie);
         }
         request.getSession().invalidate();
-
         response.sendRedirect(".");
     }
 }

@@ -1,4 +1,5 @@
 function to_cart(x) {
+
     const elem = [];
     var count = [];
     for (k = 1; k < 4; k++) {
@@ -17,6 +18,7 @@ function to_cart(x) {
             document.cookie = elem[k-1] + "=" + count[k-1];
         }
     }
+
 }
 
 function del(x) {

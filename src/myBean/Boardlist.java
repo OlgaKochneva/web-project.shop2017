@@ -8,13 +8,13 @@ public class Boardlist implements Serializable {
 
     private int totalCost;
 
-    public Boardlist(){
+    public Boardlist() {
         purchases = new ArrayList<>();
         totalCost = 0;
     }
 
     public void addPurchase(Board purchase) {
-        if (purchase.getCount() > 0){
+        if (purchase.getCount() > 0) {
             for (Board item : purchases) {
                 if (item.getId() == purchase.getId()) {
                     item = purchase;
@@ -23,8 +23,8 @@ public class Boardlist implements Serializable {
                     return;
                 }
             }
-        this.purchases.add(purchase);
-        this.recalculateTotalCost();
+            this.purchases.add(purchase);
+            this.recalculateTotalCost();
         }
     }
 
@@ -32,11 +32,11 @@ public class Boardlist implements Serializable {
         return totalCost;
     }
 
-    private void recalculateTotalCost(){
-        if(purchases==null) return;
-        this.totalCost=0;
+    private void recalculateTotalCost() {
+        if (purchases == null) return;
+        this.totalCost = 0;
 
-        for (Board purchase: this.purchases) {
+        for (Board purchase : this.purchases) {
             totalCost += purchase.getTotalcost();
         }
     }
@@ -49,5 +49,18 @@ public class Boardlist implements Serializable {
         this.purchases = purchases;
     }
 
+
+    public String getStr(Boardlist list) {
+        String result = "";
+        for (Board item : list.purchases) {
+            result += item.PStr() + " | ";
+        }
+
+        if (result != "")
+        { result += "????: " + Double.toString(list.getTotalCost()) + "$";
+
+        return result;}
+        else return "lol";
+    }
 
 }

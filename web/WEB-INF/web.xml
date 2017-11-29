@@ -82,7 +82,15 @@
             <param-value>2</param-value>
         </init-param>
     </servlet>
+    <servlet>
+        <servlet-name>Order</servlet-name>
+        <servlet-class>edu.etu.web.Order</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>Order</servlet-name>
+        <url-pattern>/order</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Cabinet</servlet-name>
         <url-pattern>/cabinet</url-pattern>

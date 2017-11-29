@@ -39,5 +39,7 @@ public  class Board implements Serializable {
     public double getTotalcost() {
         return totalcost;
     }
-
+    public String PStr(){
+        return name + ", " + Integer.toString(count) + " ?????";
+    }
 }

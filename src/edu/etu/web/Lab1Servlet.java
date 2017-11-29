@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
+import java.util.Date;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.Map;
@@ -16,7 +17,8 @@ public class Lab1Servlet extends HttpServlet {
          String lang = request.getParameter("lang");
         HttpSession ss = request.getSession();
         Cookie[] cookies = request.getCookies();
-
+        String user = (String)ss.getAttribute("username");
+        Boolean Empty=(Boolean)ss.getAttribute("Empty");
         if(lang == null) {
             if (cookies != null) {
                 for (Cookie c : cookies) {
@@ -76,7 +78,7 @@ public class Lab1Servlet extends HttpServlet {
         response.addCookie(new Cookie("id", id));
 
         String userinfo = "<a class=btn_user href='./cabinet' onclick='closeform()'>" + resources.getString("btn_enter") + "</a>";
-        String user = (String)ss.getAttribute("username");
+
         if(user != null && user != "")
             userinfo = "<a class=myLin href='./cabinet' >" + resources.getString("logged_in") + " <b>" + user + "</b></a>";
         StringBuilder sb = new StringBuilder();
@@ -98,9 +100,11 @@ public class Lab1Servlet extends HttpServlet {
         sb.append("<div class='header'>\n" +
                 "<div>\n" + userinfo +
                 "    <a class=\"btn_user\" href=\"/cart\">"+resources.getString("btn_cart")+"</a>\n" +
-                "    <a class=\"btn_user\" >"+resources.getString("btn_history")+"</a>\n" +
-                "</div>\n"+
-                "        <h1 style=\" border-top:1px solid #fffbf7; margin: 0;padding:0;font-size:60pt; font-family: 'Brush Script MT' ; text-align: center; color:#fffbf7;\">\n" +
+                "    <a class=\"btn_user\" >"+resources.getString("btn_history")+"</a>\n");
+        if(!Empty) {
+            sb.append("<a class=\"btn_user\"  href=\"/order\">"+resources.getString("btn_doorder")+"</a></div>\n");
+        }
+        sb.append("        <h1 style=\" border-top:1px solid #fffbf7; margin: 0;padding:0;font-size:60pt; font-family: 'Brush Script MT' ; text-align: center; color:#fffbf7;\">\n" +
                 "              <a style=\"text-decoration: none; background: rgba(212, 75, 56, 0); color: #fffbf7;\n"+
                 "\" href=\"/\">Boards only</a>\n" +
                 "        </h1>\n" +

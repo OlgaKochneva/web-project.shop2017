@@ -5,6 +5,7 @@ import myBean.Board;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -14,6 +15,7 @@ public class Cart extends HttpServlet {
         HttpSession ss = request.getSession();
         String lang = request.getParameter("lang");
         Cookie[] cookies = request.getCookies();
+
         int []countp=new int[3];
         for(int i=0;i<3;i++)
         {
@@ -26,6 +28,7 @@ public class Cart extends HttpServlet {
                     if(("c"+i).equals(c.getName()))
                     {
                         countp[i-1]=Integer.parseInt(c.getValue());
+
                     }
                 }
          if ("lang".equals(c.getName()) && lang == null )
@@ -34,7 +37,6 @@ public class Cart extends HttpServlet {
                     ss.setAttribute("username", c.getValue());
             }
         }catch (Exception ex){};
-
 
         Locale locale;
         if ("en".equals(lang)) {
@@ -57,6 +59,7 @@ public class Cart extends HttpServlet {
         }
 
         response.addCookie(new Cookie("lang",lang));
+
         ss.setAttribute("locale", lang);
         ss.setAttribute("purchases", purchases);
 

@@ -42,7 +42,7 @@
                 </a></h1>
             </td>
             <td>
-        <span class='cost'><a class=buttn_lng onclick="to_cart(<%= id%>)"><%=res.getString("btn_buy")%>
+        <span class='cost'><a class=buttn_lng onclick="to_cart(<%= id%>)" href="/"><%=res.getString("btn_buy")%>
                         | <span class="price"><jsp:getProperty name="BoardBean"
                                                                property="price"/> <%=res.getString("pr")%></span></a></span>
             </td>

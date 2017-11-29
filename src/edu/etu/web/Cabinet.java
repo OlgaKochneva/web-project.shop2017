@@ -1,7 +1,12 @@
 package edu.etu.web;
 
+import dbTools.OrderService;
+import dbTools.OrdersEntity;
+
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -15,11 +20,13 @@ public class Cabinet extends HttpServlet {
         String default_tab = request.getParameter("default_tab");
         response.addCookie(new Cookie("default_tab", default_tab));
         request.getSession().setAttribute("default_tab", default_tab);
+
         doGet(request, response);
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         session.setAttribute("username",request.getUserPrincipal().getName());
+        Boolean Empty=(Boolean)session.getAttribute("Empty");
         Cookie[] cookies = request.getCookies();
         String lang = request.getParameter("lang");
         String default_tab = (String)request.getSession().getAttribute("default_tab");
@@ -57,6 +64,7 @@ public class Cabinet extends HttpServlet {
         ResourceBundle resources = ResourceBundle.getBundle("lg", locale);
         response.addCookie(new Cookie("lang",lang));
         session.setAttribute("locale", lang);
+
         StringBuilder sb = new StringBuilder();
         sb.append("<html lang=\"en\">\n" +
                 "<head>\n" +
@@ -74,7 +82,11 @@ public class Cabinet extends HttpServlet {
         sb.append("<div>\n" +
                 "<div>\n"+
                 "    <a class=\"btn_user\" href=\"/cart\">"+resources.getString("btn_cart")+"</a>\n" +
-                "    <a class=\"btn_user\" >"+resources.getString("btn_history")+"</a>\n" +
+                "    <a class=\"btn_user\" >"+resources.getString("btn_history")+"</a>\n");
+                if(!Empty) {
+                    sb.append("<a class=\"btn_user\"  href=\"/order\">"+resources.getString("btn_doorder")+"</a>");
+                }
+        sb.append(
                 "</div>\n"+
                 "        <h1 style=\" border-top:1px solid #fffbf7; margin: 0;padding:0;font-size:60pt; font-family: 'Brush Script MT' ; text-align: center; color:#fffbf7;\">\n" +
                 "              <a style=\"text-decoration: none; background: rgba(212, 75, 56, 0); color: #fffbf7;\n"+
@@ -88,9 +100,40 @@ public class Cabinet extends HttpServlet {
                 "\n" +
                 "</div>");
 
+
         sb.append("<div class='cabinet'>");
         sb.append("<div style=\"margin-left:30px; margin-top: 20px;\">" + resources.getString("logged_in") + user);
-        sb.append("<form action='./cabinet' method='post' id='cabinet_form'>");
+        ArrayList<OrdersEntity> orders = OrderService.getUserAllPurchases(user);
+        if(orders.size() > 0){
+            String curier, adr;
+
+            sb.append("</div><div style=\"float:left;\">");
+            sb.append("<table id='cart_table' width='850px'>");
+            sb.append("	<thead>");
+            sb.append("		<td width='125px'>" + resources.getString("date") + "</td><td>" + resources.getString("purchases") + "</td><td>" + resources.getString("Delivery") + "</td><td>" + resources.getString("Addresse") + "</td>");
+            sb.append("	</thead>");
+            for(OrdersEntity order : orders) {
+                if(order.getWithCurier() == 0){
+                    curier = resources.getString("no");
+                    adr = resources.getString("Address"+ Integer.toString(order.getShopId()));
+                }else{
+                    curier = resources.getString("yes");
+                    adr = order.getAddressee();
+                }
+
+                sb.append("<tr>");
+                sb.append("<td>" + order.getOrderDate() + "</td>" +
+                        "<td>" + order.getPurchases() + "</td>" +
+                        "<td>" + curier + "</td>" +
+                        "<td>" + adr + "</td>");
+                sb.append("</tr>");
+            }
+            sb.append("</table>");
+        }else{
+            sb.append("<span style='display: block; margin: 10px; font-style: italic; color: #de8247'>EMPTY</span>");
+        }
+        sb.append("</div>");
+        sb.append("<div><form action='./cabinet' method='post' id='cabinet_form'>");
         sb.append(resources.getString("def") + ":<br>");
         sb.append("    <span><input id='b1'  name='default_tab' type='radio' value='1'>" +  resources.getString("titlesh") + "</span><br>");
         sb.append("    <span><input id='b2' name='default_tab' type='radio' value='2'>" +  resources.getString("titlel") + "</span><br>");
@@ -98,6 +141,7 @@ public class Cabinet extends HttpServlet {
         sb.append("    <span><button class=\"OK\" type=\"submit\" >OK</button></span>");
         sb.append(" </form>");
         sb.append("    <span><a href='./exit' class=\"OK\">"+resources.getString("btn_exit") + "</a></span></div>");
+        sb.append("</div>");
         sb.append("</div>");
         sb.append("</body></html>");
         response.setContentType("text/html; charset=UTF-8");
