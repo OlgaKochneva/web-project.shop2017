@@ -36,7 +36,8 @@ public class OrdersEntity {
         this.purchaseList = purchaseList;
     }
 
-    public OrdersEntity(){}
+    public OrdersEntity() {
+    }
 
     public OrdersEntity(String userName, String purchases, byte withCurier, int shopId) {
         this.userName = userName;

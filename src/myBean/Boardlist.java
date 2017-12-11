@@ -2,6 +2,7 @@ package myBean;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class Boardlist implements Serializable {
     private ArrayList<Board> purchases;
@@ -57,10 +58,10 @@ public class Boardlist implements Serializable {
         }
 
         if (result != "")
-        { result += "????: " + Double.toString(list.getTotalCost()) + "$";
+         result += "Итого: " + Double.toString(list.getTotalCost());
 
-        return result;}
-        else return "lol";
+        return result;
+
     }
 
 }

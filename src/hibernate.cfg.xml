@@ -16,6 +16,7 @@
     <property name="hbm2ddl.auto">update</property>
 
     <mapping class="dbTools.OrdersEntity"/>
+    <mapping class="dbTools.CommentEntity"/>
 
     <mapping resource="hibernate.hbm.xml"/>
   </session-factory>

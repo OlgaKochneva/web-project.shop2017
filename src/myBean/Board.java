@@ -40,6 +40,6 @@ public  class Board implements Serializable {
         return totalcost;
     }
     public String PStr(){
-        return name + ", " + Integer.toString(count) + " ?????";
+        return name + ", " + Integer.toString(count) + " шт";
     }
 }
