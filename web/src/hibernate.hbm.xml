@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="dbTools.OrdersEntity" table="orderlist" schema="web_lab">
+        <id name="id" column="Id"/>
+        <property name="orderDate" column="OrderDate"/>
+        <property name="userName" column="UserName"/>
+        <property name="purchases" column="Purchases"/>
+        <property name="addressee" column="Address"/>
+        <property name="withCurier" column="Delivery"/>
+        <property name="shopId" column="ShopId"/>
+    </class>
+    <class name="dbTools.CommentEntity" table="comments" schema="web_lab">
+        <id name="id" column="id"/>
+        <property name="text" column="Text"/>
+        <property name="commentDate" column="CommentDate"/>
+        <property name="userName" column="UserName"/>
+    </class>
+</hibernate-mapping>
