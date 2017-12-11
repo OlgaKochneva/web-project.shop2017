@@ -24,14 +24,14 @@
 <html>
 <head>
     <link href="../auth_form.css" rel="stylesheet" type="text/css" media="all">
-    <link rel="stylesheet" href="../button_style.css" type="text/css">
+    <link rel="stylesheet" href="../main.css" type="text/css">
     <link rel="shortcut icon" href="../pics/empt.png" type="image/png">
     <title><fmt:message key="aut"/></title>
 </head>
 <body style="background-image: url(../pics/bod.png); background-repeat:no-repeat; background-attachment:fixed;">
 <div>
     <jsp:include page="../header.jsp"/>
-    <div id='container'>
+    <div >
         <div id="boxForm">
             <h2 id="title"><fmt:message key="need_login"/></h2>
             <form action="j_security_check" method="post" name="loginForm" class="form-signin">

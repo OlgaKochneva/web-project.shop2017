@@ -82,8 +82,6 @@ div.cabinet{
 
 form#cabinet_form{
     color: rgb(28, 27, 27);
-    margin-right:30px ;
-    margin-top: 5%;
     font-family: 'Times New Roman';
     font-style: italic;
     outline: 1px rgb(186, 128, 244) solid;

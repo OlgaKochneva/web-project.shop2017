@@ -33,10 +33,10 @@ function initMap() {
 
         map.setZoom(17);
         switch (shop) {
-            case '1':
+            case '2':
                 map.setCenter([48.78821988, 44.74996448]);
                 break;
-            case '2':
+            case '1':
                 map.setCenter([48.77212909, 44.80039537]);
                 break;
         }

@@ -1,4 +1,4 @@
-function to_cart(x) {
+function to_cart(x) {//добавление товара в корзину
 
     const elem = [];
     var count = [];
@@ -20,7 +20,7 @@ function to_cart(x) {
     }
 
 }
-
+//удалить товар из горзины полностью
 function del(x) {
     const elem = [];
     for (k = 1; k < 4; k++) {
@@ -34,7 +34,7 @@ function del(x) {
     }
     location.reload();
 }
-
+//увеличить на 1
 function plus(x) {
     const elem = [];
     var count = [];
@@ -56,6 +56,7 @@ function plus(x) {
     }
     location.reload();
 }
+//уменьшить на 1
 function minus(x) {
     const elem = [];
     var count = [];

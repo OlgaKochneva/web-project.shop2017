@@ -29,7 +29,22 @@
             <form-error-page>/auth/auth-error.jsp</form-error-page>
         </form-login-config>
     </login-config>
-
+    <filter>
+        <display-name>LogFilter</display-name>
+        <filter-name>LogFilter</filter-name>
+        <filter-class>Logfilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LogFilter</filter-name>
+        <url-pattern>/</url-pattern>
+        <url-pattern>/login</url-pattern>
+        <url-pattern>/item</url-pattern>
+        <url-pattern>/cart</url-pattern>
+        <url-pattern>/order</url-pattern>
+        <url-pattern>/cabinet</url-pattern>
+        <url-pattern>/comments</url-pattern>
+        <url-pattern>/exit</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>Lab1Servlet</servlet-name>
         <servlet-class>edu.etu.web.Lab1Servlet </servlet-class>
@@ -94,6 +109,16 @@
     <servlet-mapping>
         <servlet-name>Cabinet</servlet-name>
         <url-pattern>/cabinet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Commetns</servlet-name>
+        <servlet-class>edu.etu.web.Comments</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Commetns</servlet-name>
+        <url-pattern>/comments</url-pattern>
     </servlet-mapping>
 
     <servlet>

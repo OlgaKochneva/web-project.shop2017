@@ -23,9 +23,9 @@
 
 <html>
 <head>
-    <link rel="stylesheet" href="./button_style.css" type="text/css">
+    <link rel="stylesheet" href="./main.css" type="text/css">
     <script src="./js/Cart_worker.js"></script>
-    <link rel="shortcut icon" href="/pics/empt.png" type="image/png">
+    <link rel="shortcut icon" href="pics/empt.png" type="image/png">
     <title>Boards only | <fmt:message key="btn_cart"/></title>
 </head>
 
@@ -33,7 +33,7 @@
 <div>
     <jsp:include page="header.jsp"/>
 </div>
-<div style="margin-top: 25px; margin-left: 7px " id='container'>
+<div style="margin-top: 25px; margin-left: 7px ">
 
     <c:if test="${empty sessionScope.purchases.purchases}">
         <div style="position: relative; left: 40%;"><img height=300px width=300px src="./pics/empt.png"></div>
@@ -50,7 +50,7 @@
             </thead>
             <c:forEach var="purchase" items="${sessionScope.purchases.purchases}">
                 <tr>
-                    <td><img img height=230px width=220px src="${purchase.imgurl}"></td>
+                    <td><img height=230px width=220px src="${purchase.imgurl}"></td>
                     <td style=" width: 810px; text-align: left"><b>${purchase.name}</b> - ${purchase.description}</td>
                     <td style="text-align: center">
                                     <span style="float: right">
@@ -59,8 +59,7 @@
                                     </span>
                             ${purchase.count}</td>
                     <td style="text-align: center">${purchase.totalcost} <fmt:message key="pr"/></td>
-                    <td><a onclick="del(${purchase.id})"><img style="width: 40px; margin: 10px"
-                                                              src="./pics/del.png"></a></td>
+                    <td><a onclick="del(${purchase.id})"><img style="width: 40px; margin: 10px" src="./pics/del.png"></a></td>
                 </tr>
             </c:forEach>
             <tr style="border-top-color: #fffbf7">
@@ -69,10 +68,10 @@
                 <td id="result" style="text-align: right "><b><fmt:message key="result"/>: </b></td>
                 <td>${sessionScope.purchases.totalCost}<fmt:message key="pr"/></td>
                 <c:if test="${empty sessionScope.username}">
-                    <td><a class=myLin href="/cabinet"><fmt:message key="btn_order"/></a></td>
+                    <td><a class=myLin href="<c:url value="/cabinet"/>"><fmt:message key="btn_order"/></a></td>
                 </c:if>
                 <c:if test="${not empty sessionScope.username}">
-                    <td><a class=myLin href="/cabinet" ><fmt:message key="btn_order"/></a></td>
+                    <td><a class=myLin href="<c:url value="/order"/>" ><fmt:message key="btn_order"/></a></td>
                 </c:if>
             </tr>
         </table>

@@ -1,4 +1,4 @@
-function openTab(evt, tabName) {
+function openTab(evt, tabName) {//переключение вкладок в на странице продукта
     var i, tabs, tab;
     tabs = document.getElementsByClassName("tabs");
     for (i = 0; i < tabs.length; i++) {
@@ -14,7 +14,7 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
-function openfirstTab(tabName) {
+function openfirstTab(tabName) {//подсветка стартовой вкладки на странице продукта
     var i, tabs, tab;
 
     tabs = document.getElementsByClassName("tabs");
@@ -31,3 +31,4 @@ function openfirstTab(tabName) {
         }
     }
 }
+

@@ -4,24 +4,20 @@
 
 <html>
 <head>
-    <link href="./button_style.css" rel="stylesheet" type="text/css" media="all">
-    <link href="./auth_form.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./main.css" rel="stylesheet" type="text/css" media="all">
     <link rel="shortcut icon" href="/pics/empt.png" type="image/png">
     <script src="./js/filter.js"></script>
-    <script src="./js/login_worker.js"></script>
-    <script src="./js/Cart_worker.js"></script>
     <title>BoardsOnly</title>
 
     <jsp:useBean id="BoardBean" class="myBean.BoardBean" scope="session"/>
 </head>
-<body onload="sort()" ;
-      style="background-image: url(./pics/bod.png); background-repeat:no-repeat; background-attachment:fixed;">
+<body onload="sort()" style="background-image: url(./pics/bod.png); background-repeat:no-repeat; background-attachment:fixed;">
 <div >
 
     <jsp:include page="header.jsp"/>
 </div>
 
-<div style=" border-top:1px solid #fffbf7;margin-top: 25px; margin-left: 7px " ; id='container'>
+<div style=" border-top:1px solid #fffbf7;margin-top: 25px; margin-left: 7px ">
     <span id="sort"><a class="myLin" onclick="sort(0)">Show all</a> | <a class="myLin" onclick="sort(1)">22</a> | <a class="myLin"onclick="sort(2)">27</a>
         | <a class="myLin" onclick="sort(3)" >Longboard</a></span>
 

@@ -20,7 +20,7 @@
     %>
     <jsp:useBean id="BoardBean" class="myBean.BoardBean" scope="session"/>
 
-    <script src="./js/cart_worker.js"></script>
+    <script src="./js/Cart_worker.js"></script>
 </head>
 
 <%

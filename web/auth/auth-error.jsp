@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="../button_style.css" type="text/css">
+    <link rel="stylesheet" href="../main.css" type="text/css">
     <link rel="shortcut icon" href="../pics/empt.png" type="image/png">
     <title>Error</title>
     </head>

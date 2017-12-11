@@ -1,0 +1,226 @@
+div.knopka button {
+    border-radius: 15px;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.4s;
+    font-size: 22px;
+    font-family: 'Times New Roman';
+    color: #fffbf7;
+    background: rgba(212, 75, 56, 0);
+    padding: .7em 0.59em;
+}
+
+div.knopka button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+div.knopka button.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+div.knopka3 {
+    position: relative;
+    left: 15%;
+    font-family: 'Times New Roman';
+    font-size: 24px;
+    color: #fffbf7;
+}
+
+a.btn_buy {
+    font-style: italic;
+    font-size: 22px;
+    border-color: black;
+    position: relative;
+    left: 5%;
+    border-radius: 15px;
+    color: #fffbf7;
+    text-decoration: none;
+    user-select: none;
+    background: rgba(0, 0, 0, 0.2);
+    width: 37%;
+    padding: .7em 2.2em;
+
+}
+
+a.btn_buy:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+a.btn_buy:active {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+
+div.header button {
+    border-radius: 15px;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.4s;
+    font-size: 22px;
+    font-family: 'Times New Roman';
+    color: #fffbf7;
+    background: rgba(212, 75, 56, 0);
+    padding: .7em 0.59em;
+}
+
+div.header button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+div.header button.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+a.buttn_lng {
+
+    border-color: black;
+    border-radius: 35px;
+    font-size: 15px;
+    color: #fffbf7;
+    text-decoration: none;
+    user-select: none;
+    background: rgba(212, 75, 56, 0);
+    padding: .7em 0.59em;
+}
+
+a.buttn_lng:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+a.buttn_lng:active {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+div.box {
+    margin-left: 21px;
+    margin-bottom: 21px;
+    width: 450px;
+    height: 330px;
+    float: left;
+    outline: black;
+    font-size: 17px;
+    font-style: italic;
+    color: #fffbf7;
+    background: rgba(255, 255, 255, 0.3);
+    border: double 1px black;
+    padding: 0.59em 0.59em;
+}
+
+a.myLin {
+    border-color: black;
+    font-size: 20px;
+    font-style: italic;
+    color: #fffbf7;
+    text-decoration: none;
+    background: rgba(212, 75, 56, 0);
+
+}
+
+span.info a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-weight: bolder;
+}
+
+div.user_info {
+    margin-left: 25px;
+}
+
+a.btn_user {
+    border-radius: 12px;
+    font-style: italic;
+    font-size: 15px;
+    color: #fffbf7;
+    border-color: black;
+    text-decoration: none;
+    user-select: none;
+    background: rgba(212, 75, 56, 0);
+    padding: .1em 0.59em;
+}
+
+a.btn_user:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+a.btn_user:active {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+thead.main {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    color: #fffbf7;
+    font-style: italic;
+}
+
+table.tab {
+    border: 2px solid rgba(255, 105, 100, 0);
+    font-size: 20px;
+    color: black;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+table.history {
+
+    font-size: 19px;
+    color: black;
+    font-style: italic;
+}
+
+.li1 {
+    list-style-type: none;
+    margin-left: 10px;
+    margin-top: 20px;
+    font-style: italic;
+
+}
+
+li:before {
+    content: "o ";
+}
+
+div.user{
+    text-align: center;
+    margin-left:30px;
+    margin-top: 20px;
+}
+
+div#map{
+    width: 600px;
+    height: 400px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.cart_tab  {
+    margin-left:10px;
+    margin-top: 10px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: 'Times New Roman';
+    color: rgba(255, 254, 250, 1);
+    background-color: rgba(215, 184, 249, 0.7);
+    padding: .5em 2.59em;
+    text-decoration: none;
+    user-select: none;
+}
+
+.cart_tab:hover {
+    background-color: rgba(141, 95, 189, 0.5);
+}
+
+.cart_tab:active {
+    background-color: rgba(141, 95, 189, 0.5);
+}
+

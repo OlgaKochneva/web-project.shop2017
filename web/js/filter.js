@@ -1,4 +1,4 @@
-function sort(fl) {
+function sort(fl) {//сортировка товароов в зависимоси от их длины
     const name = "filter";
     var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
     if(fl == undefined) {
