@@ -1,0 +1,153 @@
+2017-12-11 21:44:59 INFO  Version:45 - HHH000412: Hibernate Core {5.2.11.Final}
+2017-12-11 21:44:59 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-12-11 21:44:59 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-12-11 21:45:00 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-12-11 21:45:00 INFO  pooling:126 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/web_lab]
+2017-12-11 21:45:00 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-12-11 21:45:00 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-12-11 21:45:00 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-12-11 21:45:00 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-12-11 21:45:01 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1206151e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-12-11 21:45:02 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-12-11 21:45:02 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 21:45:07 INFO  Logfilter:64 - Пользователь null зашёл в личный кабинет
+2017-12-11 21:45:16 INFO  Logfilter:75 - Пользователь Olya вышел
+2017-12-11 21:45:16 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 21:45:24 INFO  Logfilter:64 - Пользователь null зашёл в личный кабинет
+2017-12-11 21:45:32 INFO  Logfilter:64 - Пользователь Eva зашёл в личный кабинет
+2017-12-11 21:45:37 INFO  Logfilter:64 - Пользователь Eva зашёл в личный кабинет
+2017-12-11 21:46:47 INFO  Logfilter:70 - Пользователь Eva оставил комментарий
+2017-12-11 21:46:50 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 21:46:52 INFO  Logfilter:64 - Пользователь Eva зашёл в личный кабинет
+2017-12-11 21:46:57 INFO  Logfilter:75 - Пользователь Eva вышел
+2017-12-11 21:46:57 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 22:36:28 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 22:36:29 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 22:36:31 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 22:40:06 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 22:41:21 INFO  Logfilter:64 - Пользователь null зашёл в личный кабинет
+2017-12-11 22:41:21 INFO  Version:45 - HHH000412: Hibernate Core {5.2.11.Final}
+2017-12-11 22:41:21 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-12-11 22:41:22 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-12-11 22:41:24 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-12-11 22:41:24 INFO  pooling:126 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/web_lab]
+2017-12-11 22:41:24 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-12-11 22:41:24 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-12-11 22:41:24 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-12-11 22:41:24 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-12-11 22:41:25 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3cc76a3] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-12-11 22:41:25 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-12-11 22:43:29 INFO  Logfilter:64 - Пользователь Olya зашёл в личный кабинет
+2017-12-11 22:44:22 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 22:44:29 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 22:44:43 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 22:44:45 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 22:45:37 INFO  Logfilter:51 - Пользователь Olya решил оформить товар
+2017-12-11 22:46:00 INFO  Logfilter:51 - Пользователь Olya решил оформить товар
+2017-12-11 22:46:26 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 22:46:37 INFO  Logfilter:51 - Пользователь Olya решил оформить товар
+2017-12-11 22:48:36 INFO  Logfilter:51 - Пользователь Olya решил оформить товар
+2017-12-11 22:49:13 INFO  Logfilter:51 - Пользователь null решил оформить товар
+2017-12-11 22:49:30 INFO  Logfilter:64 - Пользователь null зашёл в личный кабинет
+2017-12-11 22:49:30 INFO  Version:45 - HHH000412: Hibernate Core {5.2.11.Final}
+2017-12-11 22:49:30 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-12-11 22:49:30 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-12-11 22:49:31 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-12-11 22:49:31 INFO  pooling:126 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/web_lab]
+2017-12-11 22:49:31 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-12-11 22:49:31 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-12-11 22:49:31 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-12-11 22:49:31 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-12-11 22:49:32 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@74d9773] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-12-11 22:49:32 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-12-11 22:49:42 INFO  Logfilter:64 - Пользователь null зашёл в личный кабинет
+2017-12-11 22:49:47 INFO  Logfilter:51 - Пользователь Olya решил оформить товар
+2017-12-11 22:50:42 INFO  Logfilter:53 - Пользователь Olya оформил товар
+2017-12-11 22:50:43 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 22:50:48 INFO  Logfilter:64 - Пользователь Olya зашёл в личный кабинет
+2017-12-11 22:50:50 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 22:50:52 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 22:50:54 INFO  Logfilter:51 - Пользователь Olya решил оформить товар
+2017-12-11 22:51:12 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 22:51:15 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 22:51:17 INFO  Logfilter:51 - Пользователь Olya решил оформить товар
+2017-12-11 22:51:55 INFO  Logfilter:53 - Пользователь Olya оформил товар
+2017-12-11 22:51:55 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 22:51:57 INFO  Logfilter:64 - Пользователь Olya зашёл в личный кабинет
+2017-12-11 22:53:10 INFO  Logfilter:64 - Пользователь Olya зашёл в личный кабинет
+2017-12-11 22:53:13 INFO  Logfilter:75 - Пользователь Olya вышел
+2017-12-11 22:53:13 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 23:04:52 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-11 23:30:40 INFO  Logfilter:46 - /. Вывод бордов типа 22
+2017-12-11 23:34:41 INFO  Logfilter:46 - /. Вывод бордов типа 22
+2017-12-11 23:34:43 INFO  Logfilter:46 - /. Вывод бордов типа 22
+2017-12-11 23:55:05 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-12 00:11:17 INFO  Logfilter:46 - /. Вывод бордов типа 22
+2017-12-12 00:11:48 INFO  Logfilter:46 - /. Вывод бордов типа 22
+2017-12-12 00:11:55 INFO  Logfilter:46 - /. Вывод бордов типа 22
+2017-12-12 00:23:47 INFO  Logfilter:51 - Пользователь null решил оформить товар
+2017-12-12 00:27:14 INFO  Logfilter:46 - /. Вывод бордов типа 22
+2017-12-12 00:33:32 INFO  Logfilter:46 - /. Вывод бордов типа 22
+2017-12-12 00:33:47 INFO  Logfilter:64 - Пользователь null зашёл в личный кабинет
+2017-12-12 00:45:31 INFO  Logfilter:64 - Пользователь Eva зашёл в личный кабинет
+2017-12-12 00:45:36 INFO  Logfilter:51 - Пользователь Eva решил оформить товар
+2017-12-12 00:55:28 INFO  Logfilter:64 - Пользователь Eva зашёл в личный кабинет
+2017-12-12 00:56:32 INFO  Logfilter:46 - /. Вывод бордов типа 22
+2017-12-12 00:56:33 INFO  Logfilter:51 - Пользователь Eva решил оформить товар
+2017-12-12 00:56:44 INFO  Logfilter:53 - Пользователь Eva оформил товар
+2017-12-12 00:56:46 INFO  Logfilter:46 - /. Вывод бордов типа 22
+2017-12-12 00:56:49 INFO  Logfilter:64 - Пользователь Eva зашёл в личный кабинет
+2017-12-12 00:59:15 INFO  Logfilter:64 - Пользователь Eva зашёл в личный кабинет
+2017-12-12 01:02:51 INFO  Logfilter:64 - Пользователь Eva зашёл в личный кабинет
+2017-12-12 01:11:28 INFO  Logfilter:64 - Пользователь Eva зашёл в личный кабинет
+2017-12-12 01:22:06 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-12 01:22:06 INFO  Version:45 - HHH000412: Hibernate Core {5.2.11.Final}
+2017-12-12 01:22:06 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-12-12 01:22:07 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-12-12 01:22:09 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-12 01:22:12 INFO  Logfilter:46 - /. Вывод бордов типа 22
+2017-12-12 01:22:13 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-12-12 01:22:13 INFO  pooling:126 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/web_lab]
+2017-12-12 01:22:13 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-12-12 01:22:13 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-12-12 01:22:13 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-12-12 01:22:16 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-12-12 01:22:19 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@c246f6d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-12-12 01:22:22 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-12-12 01:22:30 INFO  Logfilter:46 - /. Вывод бордов типа 22
+2017-12-12 01:22:38 INFO  Logfilter:64 - Пользователь null зашёл в личный кабинет
+2017-12-12 01:22:44 INFO  Logfilter:64 - Пользователь Olya зашёл в личный кабинет
+2017-12-12 01:22:48 INFO  Logfilter:64 - Пользователь Olya зашёл в личный кабинет
+2017-12-12 01:23:37 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-12 01:23:38 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-12 01:23:39 INFO  Logfilter:46 - /. Вывод бордов типа 22
+2017-12-12 01:23:50 INFO  Logfilter:46 - /. Вывод бордов типа 22
+2017-12-12 01:23:54 INFO  Logfilter:46 - /. Вывод бордов типа 22
+2017-12-12 01:24:01 INFO  Logfilter:64 - Пользователь null зашёл в личный кабинет
+2017-12-12 01:24:01 INFO  Version:45 - HHH000412: Hibernate Core {5.2.11.Final}
+2017-12-12 01:24:01 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-12-12 01:24:01 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-12-12 01:24:03 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-12-12 01:24:03 INFO  pooling:126 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/web_lab]
+2017-12-12 01:24:03 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-12-12 01:24:03 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-12-12 01:24:03 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-12-12 01:24:04 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-12-12 01:24:05 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5e97e53f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-12-12 01:24:05 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-12-12 01:24:16 INFO  Logfilter:70 - Пользователь Olya оставил комментарий
+2017-12-12 01:24:17 INFO  Logfilter:70 - Пользователь Olya оставил комментарий
+2017-12-12 01:24:19 INFO  Logfilter:75 - Пользователь Olya вышел
+2017-12-12 01:24:19 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-12 01:24:30 INFO  Logfilter:64 - Пользователь null зашёл в личный кабинет
+2017-12-12 01:24:34 INFO  Logfilter:64 - Пользователь Olya зашёл в личный кабинет
+2017-12-12 01:24:35 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-12 01:24:40 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-12 01:24:44 INFO  Logfilter:64 - Пользователь Olya зашёл в личный кабинет
+2017-12-12 01:25:08 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-12 01:25:13 INFO  Logfilter:64 - Пользователь Olya зашёл в личный кабинет
+2017-12-12 01:25:18 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-12 01:25:24 INFO  Logfilter:64 - Пользователь Olya зашёл в личный кабинет
+2017-12-12 01:25:27 INFO  Logfilter:40 - /. Вывод всех товаров магазина.
+2017-12-12 01:25:33 INFO  Logfilter:64 - Пользователь Olya зашёл в личный кабинет
+2017-12-12 01:25:34 INFO  Logfilter:64 - Пользователь Olya зашёл в личный кабинет
