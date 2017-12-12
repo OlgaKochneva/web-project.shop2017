@@ -3,6 +3,7 @@
 
 ### Лабораторная 1
 **Реализация страницы продукта**
+***
 Lab1Servlet.java, Tab_clicked.js, main.css, web.xml, lg.properties, lg_ru.properties, lg_gr.properties, lg_en.properties.
 1. Карточка товара реализована с использованием сервлета (без использования JSP)
 2. На карточке есть фотография товара
@@ -14,6 +15,7 @@ Lab1Servlet.java, Tab_clicked.js, main.css, web.xml, lg.properties, lg_ru.proper
 
 ### Лабораторная 2
 **Реализация каталога товаров**
+***
 catalog.java, item.jsp, catalog. jsp, Boardbean.java, filtration.js, header.jsp
 1. Список продуктов с использованием JSP
 2. Список обеспечивает фильтрацию продуктов с использованием JavaScript и метода GET
@@ -27,6 +29,7 @@ catalog.java, item.jsp, catalog. jsp, Boardbean.java, filtration.js, header.jsp
 
 ### Лабораторная 3
 **Реализация корзины интернет-магазина.**
+***
 Cart.java, cart.jsp, Board.java, Boardlist.java, Cart_worker.js
 lib: jstl-1.2
 1. Корзина реализована с использованием JSTL и EL
@@ -36,6 +39,7 @@ lib: jstl-1.2
 
 ### Лабораторная 4
 **Реализация авторизации пользователя.**
+***
 auth_form.css, Exit.java, Cabinet.java, auth.jsp, auth-error.jsp, cabinet_worker.js
 1. Страница авторизации открывается принажатии на кнопку "Вход" или "Заказ" в корзине
 2. Если пользователь авторизован, то есть возможность выйти
@@ -45,6 +49,7 @@ auth_form.css, Exit.java, Cabinet.java, auth.jsp, auth-error.jsp, cabinet_worker
 
 ### Лабораторная 5
 **Реализация страницы заказа**
+***
 База данных MySQL Server shema: web_lab, table: orderlist.
 hibernate.cfg, hibernate.hbm, Order.java, Order.jsp, HibernateUtil.java, OrdersEntity.java, OrderService.java.
 yandexmaps
@@ -54,6 +59,7 @@ yandexmaps
 4. В личном кабинете есть возможность просмотра всех своих заказов.
 ### Лабораторная 6
 **Журналирование, простейшие AJAX запросы**
+***
 База данных MySQL Server shema: web_lab, table: comments.
 log4j.properties, Logfilter.java, CommentEntity.java, CommentService.java.
 1. Все действия пользователя журналируются.
